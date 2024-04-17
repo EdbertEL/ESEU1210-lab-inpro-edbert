@@ -3,6 +3,7 @@ def hangman(secretWord):
     lives = 6
 
     while lives > 0:
+        # Display word
         count = 0
         for char in secretWord:
             if char.lower() in guess.lower():
@@ -13,7 +14,7 @@ def hangman(secretWord):
         if count == 0:
             print("\nThe word is \"", secretWord, "\". You won!", sep="")
             break
-
+        # Check word
         userinput = input("\nYour guess: ")
         if len(userinput) != 1:
             print("You can only guess ONE letter at once!")
