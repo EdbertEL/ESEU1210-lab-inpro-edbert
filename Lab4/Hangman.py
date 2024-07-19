@@ -27,10 +27,12 @@ def hangman(secretWord):
             if userinput.lower() not in secretWord.lower():
                 lives -= 1
                 if lives == 0:
-                    print("You lost! Try again next time.")
+                    print("You lost! Try again next time. The word was",secretWord)
                 else:
                     print("Guess again! You only have {} \u2764\uFE0F  left.".format(lives))
 
-word_list = ["Love","Programming","Intermediate","Hangman","Software","Engineering","Study","Laboratorium"]
-hangman("Programming")
+word_list = list(open('kamuskata.txt'))
+word = random.choice(word_list).rstrip("\n")
+
+hangman(word)
             
